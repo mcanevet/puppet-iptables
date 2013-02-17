@@ -462,7 +462,7 @@ module Puppet
             when "fedora", "redhat", "centos"
               then "/sbin/service iptables save"
             when "ubuntu", "debian"
-              then "/sbin/iptables-save > /etc/iptables.rules"
+              then "invoke-rc.d iptables-persistent save"
             when "gentoo"
               then "/etc/init.d/iptables save"
             else nil
